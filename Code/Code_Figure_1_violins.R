@@ -11,7 +11,7 @@ current_path <- getActiveDocumentContext()$path
 setwd(dirname(current_path ))
 
 #load data file
-data<-read.csv(file=file.path("Data_Figures_1_2_CognitiveControl_INT_r4-r1.csv"), header=TRUE, dec=".")
+data<-read.csv(file=file.path("Data_Figure_1_DRTs.csv"), header=TRUE, dec=".")
 data$studyInt <- interaction(data$studyset, data$intervention)
 data$doflzall<-scale(data$dofl, center = TRUE, scale = TRUE)
 data = data %>% group_by(studyInt) %>% mutate(doflzsingle = scale(dofl))
